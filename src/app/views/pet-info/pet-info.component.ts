@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Pet } from 'src/app/models/pet/pet.model';
 
 @Component({
   selector: 'app-pet-info',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PetInfoComponent implements OnInit {
 
+  @Input() title: string;
+  @Input() pets: Pet[];
+
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 }
