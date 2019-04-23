@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  // URL of Agl people API
+  apiUrl : 'http://agl-developer-test.azurewebsites.net/people.json'
 };
 
 /*
