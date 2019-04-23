@@ -6,14 +6,20 @@ import { PetListComponent } from '../pet-list/pet-list.component';
 
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
+import { PeopleDataService } from 'src/app/services/people-data.service';
+
 describe('PetPageComponent', () => {
   let component: PetPageComponent;
   let fixture: ComponentFixture<PetPageComponent>;
+  let peopleService: PeopleDataService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      declarations: [ PetPageComponent, PetInfoComponent, PetListComponent ]
+      declarations: [ PetPageComponent, PetInfoComponent, PetListComponent ],
+      providers: [
+        PeopleDataService
+    ]
     })
     .compileComponents();
   }));
@@ -21,6 +27,7 @@ describe('PetPageComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PetPageComponent);
     component = fixture.componentInstance;
+    peopleService = TestBed.get(PeopleDataService); 
     fixture.detectChanges();
   });
 
