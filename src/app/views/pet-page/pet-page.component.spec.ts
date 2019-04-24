@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 
 import { PetPageComponent } from './pet-page.component';
 import { PetInfoComponent } from '../pet-info/pet-info.component';
@@ -14,14 +14,15 @@ describe('PetPageComponent', () => {
   let peopleService: PeopleDataService;
 
   beforeEach(async(() => {
+
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      declarations: [ PetPageComponent, PetInfoComponent, PetListComponent ],
+      declarations: [PetPageComponent, PetInfoComponent, PetListComponent],
       providers: [
-        PeopleDataService
-    ]
+        PeopleDataService,
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -34,4 +35,16 @@ describe('PetPageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('initializes the component', fakeAsync(() => {
+    const service = TestBed.get(PeopleDataService);
+    service.get = () => {
+      return Promise.resolve();
+    };
+
+    component.ngOnInit();
+    tick();
+
+    expect(service.get.toHaveBeenCalled);
+  }));
 });
