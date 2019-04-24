@@ -12,7 +12,6 @@ describe('PetInfoComponent', () => {
   let fixture: ComponentFixture<PetInfoComponent>;
 
   let titleEl: DebugElement;
-  let listEl: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -52,8 +51,6 @@ describe('PetInfoComponent', () => {
     expect(titleEl.nativeElement.innerHTML === titleText).toBeTruthy();
     expect(titleEl.nativeElement.innerHTML === '').toBeFalsy();
   });
-
-  
 });
 
 

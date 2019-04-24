@@ -25,7 +25,7 @@ export class PeopleDataService {
     }
 
     public getPetFilterByType(petList: Pet[], petType: PetType): Pet[] {
-        return petList.filter((pet: Pet) => pet.type === petType)
+        return petList.filter((pet: Pet) => pet.type === petType);
     }
 
     public combinePetsOfOwner(ownerList: Owner[]): Pet[] {
@@ -37,7 +37,7 @@ export class PeopleDataService {
 
     public sortPetsByOwnerGenderAndType(ownerList: Owner[], gender: Gender, petType: PetType): Pet[] {
 
-        let localOwnerList = this.getOwnerFilterByGender(ownerList, gender);
+        const localOwnerList = this.getOwnerFilterByGender(ownerList, gender);
 
         let localPetList: Pet[];
 

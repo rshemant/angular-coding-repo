@@ -27,7 +27,7 @@ describe('PetPageComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PetPageComponent);
     component = fixture.componentInstance;
-    peopleService = TestBed.get(PeopleDataService); 
+    peopleService = TestBed.get(PeopleDataService);
     fixture.detectChanges();
   });
 

@@ -61,42 +61,42 @@ describe('PeopleDataService', () => {
   it('Should return owners filtered by gender', async () => {
     const mockResponse = [
       {
-        name: "Steve",
-        gender: "Male",
+        name: 'Steve',
+        gender: 'Male',
         age: 45,
         pets: null
       },
       {
-        name: "Jennifer",
-        gender: "Female",
+        name: 'Jennifer',
+        gender: 'Female',
         age: 18,
         pets: [
           {
-            name: "Garfield",
-            type: "Cat"
+            name: 'Garfield',
+            type: 'Cat'
           }
         ]
       },
       {
-        name: "Fred",
-        gender: "Male",
+        name: 'Fred',
+        gender: 'Male',
         age: 40,
         pets: [
           {
-            name: "Tom",
-            type: "Cat"
+            name: 'Tom',
+            type: 'Cat'
           },
           {
-            name: "Max",
-            type: "Cat"
+            name: 'Max',
+            type: 'Cat'
           },
           {
-            name: "Sam",
-            type: "Dog"
+            name: 'Sam',
+            type: 'Dog'
           },
           {
-            name: "Jim",
-            type: "Cat"
+            name: 'Jim',
+            type: 'Cat'
           }
         ]
       }
@@ -112,7 +112,6 @@ describe('PeopleDataService', () => {
 
         // Only Owners That Are Female
         const onlyFemaleOwners = service.getOwnerFilterByGender(owners, 'Female');
-        
         expect(onlyFemaleOwners.every((owner: Owner) => owner.gender === 'Female')).toBeTruthy();
         expect(onlyFemaleOwners.every((owner: Owner) => owner.gender === 'Male')).toBeFalsy();
 
@@ -127,53 +126,53 @@ describe('PeopleDataService', () => {
   it('Should combine pets of owners', async () => {
     const mockResponse = [
       {
-        name: "Steve",
-        gender: "Male",
+        name: 'Steve',
+        gender: 'Male',
         age: 45,
         pets: null
       },
       {
-        name: "Jennifer",
-        gender: "Female",
+        name: 'Jennifer',
+        gender: 'Female',
         age: 18,
         pets: [
           {
-            name: "Garfield",
-            type: "Cat"
+            name: 'Garfield',
+            type: 'Cat'
           }
         ]
       },
       {
-        name: "Fred",
-        gender: "Male",
+        name: 'Fred',
+        gender: 'Male',
         age: 40,
         pets: [
           {
-            name: "Tom",
-            type: "Cat"
+            name: 'Tom',
+            type: 'Cat'
           },
           {
-            name: "Max",
-            type: "Cat"
+            name: 'Max',
+            type: 'Cat'
           },
           {
-            name: "Sam",
-            type: "Dog"
+            name: 'Sam',
+            type: 'Dog'
           },
           {
-            name: "Jim",
-            type: "Cat"
+            name: 'Jim',
+            type: 'Cat'
           }
         ]
       }
     ];
 
-    const expectedPetList : Pet[] = [
-      { name: "Garfield", type: "Cat" },
-      { name: "Tom", type: "Cat" },
-      { name: "Max", type: "Cat" },
-      { name: "Sam", type: "Dog" },
-      { name: "Jim", type: "Cat" }
+    const expectedPetList: Pet[] = [
+      { name: 'Garfield', type: 'Cat' },
+      { name: 'Tom', type: 'Cat' },
+      { name: 'Max', type: 'Cat' },
+      { name: 'Sam', type: 'Dog' },
+      { name: 'Jim', type: 'Cat' }
     ];
 
     service

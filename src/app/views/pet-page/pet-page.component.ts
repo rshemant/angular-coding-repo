@@ -25,5 +25,4 @@ export class PetPageComponent implements OnInit {
       }
     );
   }
-
 }
