@@ -18,7 +18,7 @@ export class PetPageComponent implements OnInit {
     this.dataService.getPeople().subscribe(
       ownerList => {
         this.catsOwnedByMales = this.dataService
-          .sortPetsByOwnerGenderAndType(ownerList, 'Male', 'Cat' );
+          .sortPetsByOwnerGenderAndType(ownerList, 'Male', 'Cat');
 
         this.catsOwnedByFemales = this.dataService
           .sortPetsByOwnerGenderAndType(ownerList, 'Female', 'Cat');
