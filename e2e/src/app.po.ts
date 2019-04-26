@@ -1,4 +1,4 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element, logging } from 'protractor';
 
 export class AppPage {
   navigateTo() {
@@ -19,7 +19,7 @@ export class AppPage {
     const list = element.all(by.css('.pet-info-card h2')).map( elm =>  elm.getText());
     return list ? list : null;
   }
-  
+
   getListPresentStatus() {
     return element.all(by.css('app-pet-list>ul>li')).isPresent();
   }

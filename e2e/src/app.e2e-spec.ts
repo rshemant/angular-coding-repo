@@ -20,5 +20,4 @@ describe('workspace-project App', () => {
   it('should display pet list on pet info cards', () => {
     expect(page.getListPresentStatus()).toBeTruthy();
   });
-  
 });
